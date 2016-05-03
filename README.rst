@@ -17,7 +17,7 @@ with::
 
   hg clone https://bitbucket.org/al45tair/scons-xcode xcode
 
-Next, add the tool to your environment with something like the following::
+Next, add the tool to your environment with something like the following:
 
 .. code:: python
 
