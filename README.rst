@@ -19,6 +19,8 @@ with::
 
 Next, add the tool to your environment with something like the following::
 
+.. code:: python
+
   env = Environment(tools=['default', 'xcode'])
 
 .. note:: You need to include ``default`` so that the built-in tools remain
@@ -31,7 +33,9 @@ Usage
 -----
 
 To generate an Xcode project file, simply add a call to ``env.XCodeProject``
-to your ``SConstruct`` file::
+to your ``SConstruct`` file:
+
+.. code:: python
 
   env = Environment(tools=['default', 'xcode'])
 
@@ -50,7 +54,9 @@ run/debug (this only happens for ``env.Program`` at present).
 
 Obviously that project file is very minimal; you will probably want to include
 your own groups and source files in practice, which you can do by passing a
-dictionary into the ``XcodeProject`` builder, e.g.::
+dictionary into the ``XcodeProject`` builder, e.g.:
+
+.. code:: python
 
   env.XcodeProject('MyProject.xcodeproj',
                    groups={ 'Headers': [ 'src/MyProg.h' ],
@@ -73,7 +79,9 @@ SConstruct file, namely
 These options are used by the legacy build targets automatically.
 
 The ``Clean`` action is handled automatically by the builder; if you wish to
-use variants, you can do so, for instance::
+use variants, you can do so, for instance:
+
+.. code:: python
 
   variant = 'Debug'
   if GetOption('xcode_variant') == 'Release':
@@ -90,7 +98,9 @@ use variants, you can do so, for instance::
                    variants=['Debug', 'Release'],
                    ...)
 
-Take care if you do something like this::
+Take care if you do something like this:
+
+.. code:: python
 
   myprog = env.Program(os.path.join('build', variant, 'MyProg'),
                        ['src/main.cc'])
